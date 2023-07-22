@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import Form from './Form/Form';
+import WordsList from './WordsList/WordsList';
+import { Container } from '@mui/material';
 
 export default class App extends Component {
   state = {
@@ -14,18 +16,11 @@ export default class App extends Component {
   };
   render() {
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-        }}
-      >
+      <Container maxWidth="xl">
+
         <Form addWord={this.addWord} />
-      </div>
+        <WordsList words={this.state.words}/>
+      </Container>
     );
   }
 }
