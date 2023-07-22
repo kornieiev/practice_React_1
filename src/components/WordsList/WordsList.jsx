@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function WordsList({ words }) {
+export default function WordsList({ words, deleteWord }) {
   return (
     <ul>
       {words.map(word => {
@@ -8,10 +8,11 @@ export default function WordsList({ words }) {
           <li key={word.id}>
             <p>{word.ukr}</p>
             <p>{word.eng}</p>
-            <button>Delete</button>
+            <button onClick={() => deleteWord(word.id)}>Delete</button>
           </li>
         );
       })}
     </ul>
   );
+
 }
